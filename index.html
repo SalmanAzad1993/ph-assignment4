@@ -109,37 +109,9 @@
     </main>
 
     <!--Thank You-->
-    <!--  -->
+    <!-- js code -->
     <script>
-        // document.getElementById('firstClass-increase').addEventListener('click', function(){
-        //     handleCruiseFirstClass(true);
-        // })
-
-        // document.getElementById('firstClass-decrease').addEventListener('click', function(){
-        //     handleCruiseFirstClass(false);
-        // });
-        // function handleCruiseFirstClass(isIncrease){
-        //     const firstClassInput = document.getElementById('firstClass-count');
-        //     const firstClassCount = parseInt(firstClassInput.value);
-        //     let firstClassNewCount = firstClassCount;
-        //     if(isIncrease == true){
-        //         firstClassNewCount = firstClassCount + 1;
-        //     }
-        //     if(isIncrease == false && firstClassCount > 0){
-        //         firstClassNewCount = firstClassCount - 1;
-        //     }
-        //     firstClassInput.value = firstClassNewCount;
-        //     const firstClassCost = firstClassNewCount * 150;
-        //     document.getElementById('sub-total').innerText = firstClassCost;
-        // }
-
-        // document.getElementById('economy-increase').addEventListener('click', function(){
-        //     handleCruiseEconomy(true);
-        // })
-
-        // document.getElementById('economy-decrease').addEventListener('click', function(){
-        //     handleCruiseEconomy(false);
-        // });
+        // Event handler function for calculate Cruise cabin cost
         function handleCruiseCabin(type, isIncrease){
             const typeCount =  getTypeInputValue (type);
             let typeNewCount = typeCount;
@@ -157,25 +129,24 @@
             if(type == 'economy'){
                 typeCost = typeNewCount * 100; 
             }
-
             document.getElementById('sub-total').innerText = typeCost;
             calculateTotal();
         }
-
+        // calculate function
         function calculateTotal(){
             const firstClassCount = getTypeInputValue ('firstClass');
             const economyCount = getTypeInputValue ('economy');
-
+            // calculate sub-total
             const subTotalCost = firstClassCount * 150 + economyCount * 100;
             document.getElementById('sub-total').innerText = subTotalCost;
-
+            // calculate tax
             const tax = subTotalCost * 0.1;
             document.getElementById('tax').innerText = tax;
-
+            // calculate total cost
             const totalCost = subTotalCost + tax;
             document.getElementById('total').innerText = totalCost;
         }
-
+        // Input type check and return typeCount
         function getTypeInputValue (type){
             const typeInput = document.getElementById(type + '-count');
             const typeCount = parseInt(typeInput.value);
