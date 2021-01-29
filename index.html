@@ -28,11 +28,11 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id="booking-area" class="main-content container">
 
         <div class="booking-content">
             <h1>Cruise Queen</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book./p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
 
         <div class="booking-form">
@@ -104,11 +104,20 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-now" class="btn-style">Book Now</button>
         </div>
     </main>
 
     <!--Thank You-->
+    <!-- bonus html -->
+    <div id="confirmation">
+        <div class="confirm">
+            <h1>Cruise Queen</h1>
+            <h5>Thanks for being with us</h5>
+            <p>Your booking is confirmed. Soon we'll contact you.</p>
+            <button id="book-again" class="btn-style">Book Again</button>
+        </div>
+    </div>
     <!-- js code -->
     <script>
         // Event handler function for calculate Cruise cabin cost
@@ -152,6 +161,14 @@
             const typeCount = parseInt(typeInput.value);
             return typeCount;
         }
+        
+        // bonus code
+        const bookingBtn = document.getElementById('book-now').addEventListener('click', function(){
+            const bookingArea = document.getElementById('booking-area');
+            bookingArea.style.display = 'none';
+            const confirmationArea = document.getElementById('confirmation');
+            confirmationArea.style.display = 'block';
+        });
     </script>
 </body>
 
