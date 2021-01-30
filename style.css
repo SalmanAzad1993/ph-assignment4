@@ -146,3 +146,9 @@ nav ul li a:hover, a.active{
     text-transform: uppercase;
     font-weight: 500;
 }
+#firstClass-booking, #economy-booking{
+    color: black;
+    width: 15px;
+    border: none;
+    background: none;
+}
